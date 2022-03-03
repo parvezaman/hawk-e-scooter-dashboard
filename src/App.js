@@ -1,10 +1,10 @@
-import { Button } from 'react-bootstrap';
 import './App.css';
+import Navigation from './components/Navigation/Navigation';
 
 function App() {
   return (
-    <div className="App">
-      <Button>click me</Button>
+    <div>
+      <Navigation />
     </div>
   );
 }
