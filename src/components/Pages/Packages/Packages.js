@@ -1,10 +1,11 @@
 import React from 'react';
+import CreatePackages from './CreatePackages/CreatePackages';
 
 const Packages = () => {
     return (
-        <div>
-            <h1>Packages or special offers</h1>
-        </div>
+        <>
+            <CreatePackages />
+        </>
     );
 };
 
