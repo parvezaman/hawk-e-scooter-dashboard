@@ -1,8 +1,20 @@
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import BugReportIcon from '@mui/icons-material/BugReport';
+import CategoryIcon from '@mui/icons-material/Category';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
-import MailIcon from '@mui/icons-material/Mail';
+import ConnectWithoutContactIcon from '@mui/icons-material/ConnectWithoutContact';
+import DiscountIcon from '@mui/icons-material/Discount';
+import HomeIcon from '@mui/icons-material/Home';
+import InventoryIcon from '@mui/icons-material/Inventory';
+import LocalGroceryStoreIcon from '@mui/icons-material/LocalGroceryStore';
+import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import MenuIcon from '@mui/icons-material/Menu';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
+import PaidIcon from '@mui/icons-material/Paid';
+import PeopleIcon from '@mui/icons-material/People';
+import ReportIcon from '@mui/icons-material/Report';
+import StorefrontIcon from '@mui/icons-material/Storefront';
+import { ListItem } from '@mui/material';
 import MuiAppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
@@ -17,6 +29,7 @@ import { styled, useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -128,52 +141,179 @@ const MiniNav = () => {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItemButton
-                            key={text}
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    ))}
+                    <ListItem>
+                        <Link to="/">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <HomeIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Dashboard Home
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/coupon">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <DiscountIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Coupon
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/customerdata">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <PeopleIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Customer Data
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/customerwallet">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <AccountBalanceWalletIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Customer Wallet
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/messaging">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <MailOutlineIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Messages
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/packages">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <InventoryIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Packages
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/payment">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <PaidIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Payment
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/productcategory">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <CategoryIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Product Category
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/report">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <ReportIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Report
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/selldashboard">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <StorefrontIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Sells Dashboard
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/ssl">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <ConnectWithoutContactIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    SSL
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/stock">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <LocalGroceryStoreIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Stock
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem>
+                        <Link to="/tickets">
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <BugReportIcon />
+                                </ListItemIcon>
+                                <ListItemText>
+                                    Tickets
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
                 </List>
-                <Divider />
-                <List>
-                    {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItemButton
-                            key={text}
-                            sx={{
-                                minHeight: 48,
-                                justifyContent: open ? 'initial' : 'center',
-                                px: 2.5,
-                            }}
-                        >
-                            <ListItemIcon
-                                sx={{
-                                    minWidth: 0,
-                                    mr: open ? 3 : 'auto',
-                                    justifyContent: 'center',
-                                }}
-                            >
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} sx={{ opacity: open ? 1 : 0 }} />
-                        </ListItemButton>
-                    ))}
-                </List>
+
+                {/* To incorporate another list from the bollow of MUI to see the icon position changes */}
+
             </Drawer>
             <Box component="main" sx={{ flexGrow: 1, p: 3 }}>
 
