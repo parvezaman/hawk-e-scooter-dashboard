@@ -28,6 +28,7 @@ import ListItemText from '@mui/material/ListItemText';
 import { styled, useTheme } from '@mui/material/styles';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { makeStyles } from '@mui/styles';
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -110,6 +111,20 @@ const MiniNav = () => {
         setOpen(false);
     };
 
+    const useStyles = makeStyles({
+        navTextDesign: {
+            textDecoration: 'none !important',
+            color: '#000'
+        },
+        navLinkDesign: {
+            textDecoration: 'none'
+        },
+        listItemStyle: {
+            marginLeft: '-3 !important'
+        }
+    })
+
+    const { navTextDesign, navLinkDesign, listItemStyle } = useStyles();
 
     return (
         <Box sx={{ display: 'flex' }}>
@@ -141,169 +156,169 @@ const MiniNav = () => {
                 </DrawerHeader>
                 <Divider />
                 <List>
-                    <ListItem>
-                        <Link to="/">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <HomeIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Dashboard Home
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/coupon">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/coupon" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <DiscountIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Coupon
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/customerdata">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/customerdata" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <PeopleIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Customer Data
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/customerwallet">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/customerwallet" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <AccountBalanceWalletIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Customer Wallet
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/messaging">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/messaging" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <MailOutlineIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Messages
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/packages">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/packages" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <InventoryIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Packages
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/payment">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/payment" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <PaidIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Payment
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/productcategory">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/productcategory" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <CategoryIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Product Category
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/report">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/report" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <ReportIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Report
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/selldashboard">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/selldashboard" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <StorefrontIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Sells Dashboard
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/ssl">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/ssl" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <ConnectWithoutContactIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     SSL
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/stock">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/stock" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <LocalGroceryStoreIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Stock
                                 </ListItemText>
                             </ListItemButton>
                         </Link>
                     </ListItem>
                     <Divider />
-                    <ListItem>
-                        <Link to="/tickets">
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/tickets" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
                                     <BugReportIcon />
                                 </ListItemIcon>
-                                <ListItemText>
+                                <ListItemText className={navTextDesign}>
                                     Tickets
                                 </ListItemText>
                             </ListItemButton>
