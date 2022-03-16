@@ -2,7 +2,7 @@ import React from 'react';
 
 const Stock = () => {
     return (
-        <div>
+        <div style={{ marginLeft: '5rem' }}>
             <h1>Available stocks</h1>
         </div>
     );

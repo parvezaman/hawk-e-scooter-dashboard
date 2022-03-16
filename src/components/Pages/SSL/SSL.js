@@ -2,7 +2,7 @@ import React from 'react';
 
 const SSL = () => {
     return (
-        <div>
+        <div style={{ marginLeft: '5rem' }}>
             <h1>Social media logins</h1>
         </div>
     );

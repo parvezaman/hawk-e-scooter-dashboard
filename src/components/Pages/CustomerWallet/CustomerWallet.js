@@ -2,7 +2,7 @@ import React from 'react';
 
 const CustomerWallet = () => {
     return (
-        <div>
+        <div style={{ marginLeft: '5rem' }}>
             <h1>Customer wallet</h1>
         </div>
     );

@@ -2,7 +2,7 @@ import React from 'react';
 
 const Report = () => {
     return (
-        <div>
+        <div style={{ marginLeft: '5rem' }}>
             <h1>Report</h1>
         </div>
     );

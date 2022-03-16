@@ -2,7 +2,7 @@ import React from 'react';
 
 const CustomerData = () => {
     return (
-        <div>
+        <div style={{ marginLeft: '5rem' }}>
             <h1>Customer Data</h1>
         </div>
     );

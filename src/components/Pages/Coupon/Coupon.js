@@ -2,7 +2,7 @@ import React from 'react';
 
 const Coupon = () => {
     return (
-        <div>
+        <div style={{ marginLeft: '5rem' }}>
             <h1>Coupon page</h1>
         </div>
     );
