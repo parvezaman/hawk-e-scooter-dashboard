@@ -1,6 +1,6 @@
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import './App.css';
-import Navigation from './components/Navigation/Navigation';
+import MiniNav from './components/Navigation/MiniNav';
 import Coupon from './components/Pages/Coupon/Coupon';
 import CustomerData from './components/Pages/CustomerData/CustomerData';
 import CustomerWallet from './components/Pages/CustomerWallet/CustomerWallet';
@@ -18,7 +18,8 @@ import Tickets from './components/Pages/Tickets/Tickets';
 function App() {
   return (
     <BrowserRouter>
-      <Navigation />
+      {/* <Navigation /> */}
+      <MiniNav />
       <Switch>
         <Route exact path={"/"} component={DasboardHome} />
         <Route exact path={"/coupon"} component={Coupon} />
