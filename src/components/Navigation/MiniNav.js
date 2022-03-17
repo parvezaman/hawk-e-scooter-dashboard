@@ -40,7 +40,7 @@ const openedMixin = (theme) => ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
     }),
-    overflowX: 'hidden',
+    overflowX: 'hidden !important',
 });
 
 const closedMixin = (theme) => ({
@@ -48,7 +48,7 @@ const closedMixin = (theme) => ({
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
     }),
-    overflowX: 'hidden',
+    overflowX: 'hidden !important',
     width: `calc(${theme.spacing(7)} + 1px)`,
     [theme.breakpoints.up('sm')]: {
         width: `calc(${theme.spacing(8)} + 1px)`,
@@ -68,7 +68,7 @@ const AppBar = styled(MuiAppBar, {
     shouldForwardProp: (prop) => prop !== 'open',
 })(({ theme, open }) => ({
     zIndex: theme.zIndex.drawer + 1,
-    position: 'relative',
+    overflowX: 'hidden !important',
     transition: theme.transitions.create(['width', 'margin'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.leavingScreen,
@@ -86,6 +86,7 @@ const AppBar = styled(MuiAppBar, {
 const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' })(
     ({ theme, open }) => ({
         width: drawerWidth,
+        overflowX: 'hidden !important',
         flexShrink: 0,
         whiteSpace: 'nowrap',
         boxSizing: 'border-box',
