@@ -1,11 +1,16 @@
 // import CreatePackages from './CreatePackages/CreatePackages';
+import { TextField } from '@mui/material';
 import Backdrop from '@mui/material/Backdrop';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Fade from '@mui/material/Fade';
 import Modal from '@mui/material/Modal';
 import Typography from '@mui/material/Typography';
+import axios from 'axios';
 import * as React from 'react';
+import { useForm } from "react-hook-form";
+import AllPackages from './AllPackages/AllPackages';
+
 
 const style = {
     position: 'absolute',
@@ -24,29 +29,84 @@ const Packages = () => {
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
 
+    const { reset } = useForm();
+
+    const [packageInfo, setPackageInfo] = React.useState();
+
+    const handlaOnBlur = (e) => {
+        const field = e.target.name;
+        const value = e.target.value;
+
+        const newInfo = { ...packageInfo };
+        newInfo[field] = value;
+        setPackageInfo(newInfo);
+
+    }
+
+    const handleOnSubmit = (e) => {
+        console.log(packageInfo);
+        e.preventDefault();
+        axios.post("http://localhost:5000/packages", packageInfo)
+            .then(res => {
+                console.log(res);
+                if (res.data.insertedId) {
+                    alert("data added successfully");
+
+                }
+                reset();
+            })
+
+    }
+
     return (
         <div style={{ margin: '1rem 0 0 5rem' }}>
-            <Button onClick={handleOpen}>Create New Package</Button>
-            <Modal
-                aria-labelledby="transition-modal-title"
-                aria-describedby="transition-modal-description"
-                open={open}
-                onClose={handleClose}
-                closeAfterTransition
-                BackdropComponent={Backdrop}
-                BackdropProps={{
-                    timeout: 5,
-                }}
-            >
-                <Fade in={open}>
-                    <Box sx={style}>
-                        <Typography id="transition-modal-title" variant="h6" component="h2">
-                            Packages are coming soon
-                        </Typography>
+            <div>
+                <Button onClick={handleOpen}>Create New Package</Button>
+                <Modal
+                    aria-labelledby="transition-modal-title"
+                    aria-describedby="transition-modal-description"
+                    open={open}
+                    onClose={handleClose}
+                    closeAfterTransition
+                    BackdropComponent={Backdrop}
+                    BackdropProps={{
+                        timeout: 500,
+                    }}
+                >
+                    <Fade in={open}>
+                        <Box sx={style}>
 
-                    </Box>
-                </Fade>
-            </Modal>
+                            <Typography id="transition-modal-title" variant="h6" component="h2">
+                                Please provide the information for your new Package
+                            </Typography>
+
+                            <form onSubmit={handleOnSubmit}>
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Package Name"
+                                    variant="outlined"
+                                    sx={{ width: '99%', m: 1 }}
+                                    name="packageName"
+                                    onBlur={handlaOnBlur}
+                                />
+                                <TextField
+                                    id="outlined-basic"
+                                    label="Package Description"
+                                    variant="outlined"
+                                    sx={{ width: '99%', m: 1 }}
+                                    name="packageDescription"
+                                    onBlur={handlaOnBlur}
+                                />
+                                <Button type='submit' variant='contained'>Submit</Button>
+                            </form>
+
+                        </Box>
+                    </Fade>
+                </Modal>
+            </div>
+            <div>
+                <AllPackages />
+            </div>
         </div>
     );
 };
