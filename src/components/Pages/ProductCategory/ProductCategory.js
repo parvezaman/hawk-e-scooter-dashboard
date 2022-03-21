@@ -44,7 +44,7 @@ const ProductCategory = () => {
   const handleOnSubmit = (e) => {
     console.log(productInfo);
     e.preventDefault();
-    axios.post("http://localhost:5000/scooters", productInfo).then((res) => {
+    axios.post("https://fast-thicket-64971.herokuapp.com/scooters", productInfo).then((res) => {
       console.log(res);
       if (res.data.insertedId) {
         alert("data added successfully");

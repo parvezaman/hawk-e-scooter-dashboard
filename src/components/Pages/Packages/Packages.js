@@ -46,7 +46,7 @@ const Packages = () => {
     const handleOnSubmit = (e) => {
         console.log(packageInfo);
         e.preventDefault();
-        axios.post("http://localhost:5000/packages", packageInfo)
+        axios.post("https://fast-thicket-64971.herokuapp.com/packages", packageInfo)
             .then(res => {
                 console.log(res);
                 if (res.data.insertedId) {
