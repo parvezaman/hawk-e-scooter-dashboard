@@ -172,6 +172,33 @@ const MiniNav = () => {
                     </ListItem>
                     <Divider />
                     <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/selldashboard" className={navLinkDesign}>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <StorefrontIcon />
+                                </ListItemIcon>
+                                <ListItemText className={navTextDesign}>
+                                    Sales Dashboard
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+                    <ListItem sx={{ marginLeft: -3 }}>
+                        <Link to="/productcategory" className={navLinkDesign}>
+                            <ListItemButton>
+                                <ListItemIcon>
+                                    <CategoryIcon />
+                                </ListItemIcon>
+                                <ListItemText className={navTextDesign}>
+                                    Product Category
+                                </ListItemText>
+                            </ListItemButton>
+                        </Link>
+                    </ListItem>
+                    <Divider />
+
+                    <ListItem sx={{ marginLeft: -3 }}>
                         <Link to="/coupon" className={navLinkDesign}>
                             <ListItemButton>
                                 <ListItemIcon>
@@ -248,19 +275,7 @@ const MiniNav = () => {
                             </ListItemButton>
                         </Link>
                     </ListItem>
-                    <Divider />
-                    <ListItem sx={{ marginLeft: -3 }}>
-                        <Link to="/productcategory" className={navLinkDesign}>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <CategoryIcon />
-                                </ListItemIcon>
-                                <ListItemText className={navTextDesign}>
-                                    Product Category
-                                </ListItemText>
-                            </ListItemButton>
-                        </Link>
-                    </ListItem>
+                    
                     <Divider />
                     <ListItem sx={{ marginLeft: -3 }}>
                         <Link to="/report" className={navLinkDesign}>
@@ -270,19 +285,6 @@ const MiniNav = () => {
                                 </ListItemIcon>
                                 <ListItemText className={navTextDesign}>
                                     Report
-                                </ListItemText>
-                            </ListItemButton>
-                        </Link>
-                    </ListItem>
-                    <Divider />
-                    <ListItem sx={{ marginLeft: -3 }}>
-                        <Link to="/selldashboard" className={navLinkDesign}>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    <StorefrontIcon />
-                                </ListItemIcon>
-                                <ListItemText className={navTextDesign}>
-                                    Sells Dashboard
                                 </ListItemText>
                             </ListItemButton>
                         </Link>

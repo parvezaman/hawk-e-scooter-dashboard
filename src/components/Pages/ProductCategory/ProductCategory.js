@@ -56,7 +56,7 @@ const ProductCategory = () => {
   return (
     <div style={{ margin: "1rem 0 0 5rem" }}>
       <div>
-        <Button onClick={handleOpen}>Create New Package</Button>
+        <Button onClick={handleOpen}>Add new product</Button>
         <Modal
           aria-labelledby="transition-modal-title"
           aria-describedby="transition-modal-description"
