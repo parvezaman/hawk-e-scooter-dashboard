@@ -1,0 +1,9 @@
+.customerStyle{
+    border: 3px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 5px;
+    padding: 15px;
+    margin: 15px;
+    background-color: darkkhaki;
+}
